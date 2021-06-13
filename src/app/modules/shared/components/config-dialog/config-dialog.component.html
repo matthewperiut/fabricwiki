@@ -1,0 +1,6 @@
+<select [formControl]="codeStyleControl" >
+  <option [value]="option" *ngFor="let option of codeStyleOptions">
+    {{ option }}
+  </option>
+</select>
+<button (click)="close()"></button>

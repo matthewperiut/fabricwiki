@@ -1,0 +1,55 @@
+.navigation {
+  min-width: 18rem;
+  max-width: 18rem;
+  
+  font-size: 17px;
+  font-weight: 500;
+  
+  > ul {
+    width: 90%;
+    padding-left: 1rem;
+
+    > li {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+
+  span {
+    padding-left: 0.5rem;
+  }
+}
+
+.links {
+  margin-top: 0.5rem;
+  font-weight: 300;
+  font-size: 14px;
+  color: rgba(17,24,39);
+
+  > ul {
+    list-style-type: none;
+    padding-left: calc(0.5rem + 25px);
+  
+    > li {
+      padding-bottom: 0.2rem;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: rgba(17,24,39);
+    opacity: 0.9;
+
+    &:hover {
+      text-decoration: underline;
+      opacity: 1;
+    }
+  }
+}

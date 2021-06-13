@@ -1,0 +1,41 @@
+<section>
+  <h1>Adding a block</h1>
+  <p>How to add a block, model and texture</p>
+</section>
+
+<section>
+  <h1>Creating a basic block</h1>
+  <p>You don't necessarily need a custom class for your block, that's only if you require extra functionality.</p>
+  <p>It's recommended you store all of your block instances in their own class; <b>ModBlocks</b> for example</p>
+
+  <pre><code>
+    public class ModBlocks &#123;
+        // This will inherit all the properties of stone
+        public static final Block TEST = new Block(FabricBlockSettings.copyOf(Blocks.STONE));
+    &#125; 
+  </code></pre>
+
+  <p>
+    You may have noticed you can't give yourself the block, that's because you need to create a block item.
+    Items and their settings are covered more in the <a routerLink="items/adding">Adding an item</a> section
+  </p>
+
+  <pre><code>
+    public class ModItems &#123;
+        public static final Item TEST = new BlockItem(ModBlocks.TEST, new FabricItemSettings());
+    &#125; 
+  </code></pre>
+
+  <p>Last thing to do is register them, I'm doing this in our mod initializer; it's up to you to organise this better</p>
+
+  <pre><code>
+    public class Tutorial implements ModInitializer &#123;
+        ...
+        @Override
+        public void onInitialize() &#123;
+            Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "test"), ModBlocks.TEST);
+            Registry.register(Registry.ITEM, new Identifier(MOD_ID, "test"), ModItems.TEST);
+        &#125;
+    &#125; 
+  </code></pre>
+</section>
