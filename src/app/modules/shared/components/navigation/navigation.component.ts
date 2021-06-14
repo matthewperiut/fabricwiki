@@ -81,8 +81,14 @@ export class NavigationComponent {
 
     this.sections.push({
       title: "Networking",
-      img: "assets/img/networking.png",
+      img: "assets/img/network.png",
       links: []
-    })
+    });
+
+    this.sections.push({
+      title: "Events",
+      img: "assets/img/event.png",
+      links: []
+    });
   }
 }
